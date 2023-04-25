@@ -16,7 +16,7 @@ lint:
     - npx eslint cypress
 
 cypress:
-  image: cypress/base
+  image: cypress/included
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
