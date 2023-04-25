@@ -5,7 +5,7 @@ stages: # List of stages for jobs, and their order of execution
 variables:
   URL: "https://example.cypress.io"
 
-build-job:
+lint:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   stage: lint
