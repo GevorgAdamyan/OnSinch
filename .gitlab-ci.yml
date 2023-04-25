@@ -10,7 +10,7 @@ lint:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   stage: lint
   before_script:
-    - sudo npm i npx
+    - npm i
   script:
     - npx eslint cypress
 
@@ -20,7 +20,7 @@ cypress:
     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
   stage: test
   before_script:
-    - sudo npm i npx
+    - npm i
   script:
     - npm i
     - npx cypress run
