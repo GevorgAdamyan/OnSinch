@@ -26,9 +26,13 @@ stages:          # List of stages for jobs, and their order of execution
   - test
   - deploy
 
+variables:
+  URL: ""
+
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
+    - echo $URL
     - echo "Compiling the code..."
     - echo "Compile complete."
 
