@@ -6,6 +6,7 @@ variables:
   URL: "https://example.cypress.io"
 
 lint:
+  image: node:alpine
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   stage: lint
@@ -15,6 +16,7 @@ lint:
     - npx eslint cypress
 
 cypress:
+  image: node:alpine
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
