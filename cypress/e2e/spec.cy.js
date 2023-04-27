@@ -1,5 +1,6 @@
 describe('template spec', () => {
   it('passes', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+    console.log('running test against '+process.env.URL);
+    cy.visit('https://example.cypress.io');
+  });
+});
