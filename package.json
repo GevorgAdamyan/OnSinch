@@ -4,6 +4,9 @@
     "eslint": "^8.39.0"
   },
   "dependencies": {
-    "eslint-plugin-cypress": "^2.13.2"
+    "currents": "^1.0.3",
+    "cypress-cloud": "^1.7.4",
+    "eslint-plugin-cypress": "^2.13.2",
+    "typescript": "^5.0.4"
   }
 }
