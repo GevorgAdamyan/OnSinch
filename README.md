@@ -9,3 +9,4 @@
 - `npm install cypress`
 - `npx cypress open` - Open cypress localy with GUI and pick specific test file to test
 - `npx cypress run` - Run all tests that has been writhen without separating them by group
+
