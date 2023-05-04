@@ -1,11 +1,16 @@
 import { SelectorObject } from "../../support/types";
 
 export default abstract class BasePage {
-    protected typeText(selector: string, text: string | number): void {
+    protected typeText(selector: string, text: string | number, force?: boolean): void {
         if (typeof text === 'number') {
             text = text.toString();
         }
-        cy.get(selector).click().type(text)
+
+        if (force) {
+            cy.get(selector).click({force: force}).type(text)
+        } else {
+            cy.get(selector).click().type(text)
+        }
     }
 
     protected clearAndTypeText(selector: string, text: string | number): void {
@@ -38,16 +43,16 @@ export default abstract class BasePage {
     protected getSelectorsToBeChecked(selectors: SelectorObject, selectorsToExclude?: string | string[]): string[] {
         const selectorsToBeChecked: string[] = [];
         if (selectorsToExclude) {
-          const excludeArray = Array.isArray(selectorsToExclude) ? selectorsToExclude : [selectorsToExclude];
-          Object.keys(selectors).forEach(key => {
-            if (!excludeArray.some(selector => selector === key)) {
-              selectorsToBeChecked.push(selectors[key]);
-            }
-          });
+            const excludeArray = Array.isArray(selectorsToExclude) ? selectorsToExclude : [selectorsToExclude];
+            Object.keys(selectors).forEach(key => {
+                if (!excludeArray.some(selector => selector === key)) {
+                    selectorsToBeChecked.push(selectors[key]);
+                }
+            });
         } else {
-          Object.values(selectors).forEach(selector => selectorsToBeChecked.push(selector));
+            Object.values(selectors).forEach(selector => selectorsToBeChecked.push(selector));
         }
-    
+
         return selectorsToBeChecked;
-      }
+    }
 }
