@@ -4,7 +4,7 @@ import * as data from '../../support/data'
 
 let errorMessage: string;
 
-describe('Test Login Feature', () => [
+describe('Test Login Feature', () => {
     beforeEach(() => {
         cy.visit('/');
     }),
@@ -25,5 +25,4 @@ describe('Test Login Feature', () => [
             }
         })
     })
-
-])
+})

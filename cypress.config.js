@@ -5,7 +5,7 @@ module.exports = defineConfig({
     viewportHeight: 1080,
     viewportWidth: 1920,
     watchForFileChanges: false,
-    baseUrl: 'https://rafat.demo.onsinch.com/users/login',
+    baseUrl: 'https://rafat.demo.onsinch.com',
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
