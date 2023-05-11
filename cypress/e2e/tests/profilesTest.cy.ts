@@ -36,7 +36,6 @@ describe('Test Login Feature', () => {
                 default:
                     break;
             }
-
         })
     })
 })

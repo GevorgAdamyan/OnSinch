@@ -11,12 +11,16 @@ let selectors: SelectorObject = {
     profilesDropdown: 'div.top-menu > ul > li:nth-child(1)',
     workerContent: 'div.MuiCard-root',
     superAdminPageTitle: '.page-content > h3',
-    superAdminPageContent: '.page-content > h3'
+    superAdminPageContent: '.page-content > h3',
+    workerAccountBtn: '#react-mount-point > header > div > div:nth-child(7) > div > button',
+    workerProfileLink: '[href="/react/profile"]',
+    logoutBtn: 'Log out'
 }
 
 export default class MainPage extends BasePage {
     checkElementsVisibility(): void {
-        let selectorsToExclude = ['workerContent', 'superAdminPageTitle', 'superAdminPageContent'];
+        let selectorsToExclude = ['workerContent', 'superAdminPageTitle', 'superAdminPageContent', 'workerAccountBtn',
+            'workerProfileLink'];
         let selectorsToBeChecked = this.getSelectorsToBeChecked(selectors, selectorsToExclude);
         this.getElemenstByArrayAndCheckVisibility(selectorsToBeChecked);
     }
@@ -36,5 +40,15 @@ export default class MainPage extends BasePage {
 
     getSuperAdminPageContent(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get(selectors.superAdminPageContent);
+    }
+
+    openWorkerProfile(): void {
+        this.clickOnElement(selectors.workerAccountBtn);
+        this.clickOnElement(selectors.workerProfileLink);
+    }
+
+    doLogOut(): void {
+        this.clickOnElement(selectors.workerAccountBtn);
+        this.clickOnElement(`span:contains("${selectors.logoutBtn}")`);
     }
 }

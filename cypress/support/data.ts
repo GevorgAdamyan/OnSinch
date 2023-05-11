@@ -4,8 +4,14 @@ export const paths = {
     superAdminPage: '/superadmin'
 }
 
+export const dataForPassChange = {
+    oldPass: '223kurdi997',
+    newPass: 'adminsupport1'
+}
+
 export const alertMessages = {
-    wrongCredential: 'Incorrect email or password.'
+    wrongCredential: 'Incorrect email or password.',
+    passwordChangeSuccess: 'Password change successful'
 }
 
 export const emailDomain = '@myagency.com';

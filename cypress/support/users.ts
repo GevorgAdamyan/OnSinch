@@ -2,7 +2,7 @@ import { User } from "./types";
 
 export const Admin: User = {
     email: 'admin@myagency.com',
-    password: 'adminsupport1',
+    password: '223kurdi997',
     name: 'Admin user'
 }
 
